@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "211309273119",
+    "firebase_url": "https://on-the-way-d9418-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "on-the-way-d9418",
+    "storage_bucket": "on-the-way-d9418.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:211309273119:android:c6f3b67e7af56f429d752a",
+        "android_client_info": {
+          "package_name": "com.example.ontheway"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "211309273119-klqp3dmv6kmcf5cv7ng3vvt066e5pjts.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBGIDLyOB3DfCLNU4VxFM-8eiEJZnd-D8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "211309273119-klqp3dmv6kmcf5cv7ng3vvt066e5pjts.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
