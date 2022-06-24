@@ -6,6 +6,7 @@
         <entry key="..\:/Users/nadun/AndroidStudioProjects/OnTheWay/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.226" />
         <entry key="..\:/Users/nadun/AndroidStudioProjects/OnTheWay/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.226" />
         <entry key="..\:/Users/nadun/AndroidStudioProjects/OnTheWay/app/src/main/res/drawable/ic_launcher_background.xml" value="0.226" />
+        <entry key="..\:/Users/nadun/AndroidStudioProjects/OnTheWay/app/src/main/res/drawable/ic_shopping_cart_24.xml" value="0.231" />
         <entry key="..\:/Users/nadun/AndroidStudioProjects/OnTheWay/app/src/main/res/drawable/lock.xml" value="0.226" />
         <entry key="..\:/Users/nadun/AndroidStudioProjects/OnTheWay/app/src/main/res/layout-w1240dp/activity_customer_res.xml" value="0.22556894243641232" />
         <entry key="..\:/Users/nadun/AndroidStudioProjects/OnTheWay/app/src/main/res/layout-w1240dp/activity_login.xml" value="0.22556894243641232" />
@@ -14,10 +15,19 @@
         <entry key="..\:/Users/nadun/AndroidStudioProjects/OnTheWay/app/src/main/res/layout/activity_customer_res.xml" value="0.23402777777777778" />
         <entry key="..\:/Users/nadun/AndroidStudioProjects/OnTheWay/app/src/main/res/layout/activity_login.xml" value="0.23402777777777778" />
         <entry key="..\:/Users/nadun/AndroidStudioProjects/OnTheWay/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/nadun/AndroidStudioProjects/OnTheWay/app/src/main/res/layout/activity_main_page.xml" value="0.23155737704918034" />
+        <entry key="..\:/Users/nadun/AndroidStudioProjects/OnTheWay/app/src/main/res/layout/activity_map.xml" value="0.2609289617486339" />
         <entry key="..\:/Users/nadun/AndroidStudioProjects/OnTheWay/app/src/main/res/layout/activity_me_reg_shop_location.xml" value="0.22465277777777778" />
         <entry key="..\:/Users/nadun/AndroidStudioProjects/OnTheWay/app/src/main/res/layout/activity_merchant_reg.xml" value="0.23402777777777778" />
         <entry key="..\:/Users/nadun/AndroidStudioProjects/OnTheWay/app/src/main/res/layout/activity_register_as.xml" value="0.24351092896174864" />
         <entry key="..\:/Users/nadun/AndroidStudioProjects/OnTheWay/app/src/main/res/layout/activity_search.xml" value="0.24351092896174864" />
+        <entry key="..\:/Users/nadun/AndroidStudioProjects/OnTheWay/app/src/main/res/layout/fragment_cart.xml" value="0.23155737704918034" />
+        <entry key="..\:/Users/nadun/AndroidStudioProjects/OnTheWay/app/src/main/res/layout/fragment_dashboard.xml" value="0.23155737704918034" />
+        <entry key="..\:/Users/nadun/AndroidStudioProjects/OnTheWay/app/src/main/res/layout/fragment_home.xml" value="0.23155737704918034" />
+        <entry key="..\:/Users/nadun/AndroidStudioProjects/OnTheWay/app/src/main/res/layout/fragment_home2.xml" value="0.23155737704918034" />
+        <entry key="..\:/Users/nadun/AndroidStudioProjects/OnTheWay/app/src/main/res/layout/fragment_notifications.xml" value="0.2" />
+        <entry key="..\:/Users/nadun/AndroidStudioProjects/OnTheWay/app/src/main/res/layout/fragment_profile.xml" value="0.23155737704918034" />
+        <entry key="..\:/Users/nadun/AndroidStudioProjects/OnTheWay/app/src/main/res/menu/bottom_nav_menu.xml" value="0.26328125" />
         <entry key="..\:/Users/nadun/AndroidStudioProjects/OnTheWay/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.226" />
       </map>
     </option>

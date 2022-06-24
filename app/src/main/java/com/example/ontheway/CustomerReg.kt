@@ -29,20 +29,6 @@ class CustomerReg : AppCompatActivity() {
             val pass = binding.passWord.text.toString()
             val confirmPass = binding.confirmPass.text.toString()
 
-            database = FirebaseDatabase.getInstance().getReference("Customer")
-            val customer = Customer(email,pNumber,pass,confirmPass)
-            database.child(email).setValue(customer).addOnSuccessListener {
-
-                binding.etEmail.text?.clear()
-                binding.pNumber.text?.clear()
-                binding.passWord.text?.clear()
-                binding.confirmPass.text?.clear()
-
-                Toast.makeText(this, "successfully Saved", Toast.LENGTH_SHORT).show()
-            }.addOnFailureListener {
-                Toast.makeText(this, "Failed", Toast.LENGTH_SHORT).show()
-
-            }
             if (email.isNotEmpty() && pNumber.isNotEmpty() && pass.isNotEmpty() && confirmPass.isNotEmpty()) {
                 if (pass == confirmPass) {
                     firebaseAuth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener{
@@ -58,6 +44,22 @@ class CustomerReg : AppCompatActivity() {
                 }
             }else {
                 Toast.makeText(this, "Empty fields are not allowed", Toast.LENGTH_LONG).show()
+            }
+
+            database = FirebaseDatabase.getInstance().getReference("Customer")
+
+            val customer = Customer(email,pNumber,pass)
+            database.child(email).setValue(customer).addOnSuccessListener {
+
+                binding.etEmail.text?.clear()
+                binding.pNumber.text?.clear()
+                binding.passWord.text?.clear()
+
+                Toast.makeText(this, "successfully Saved", Toast.LENGTH_LONG).show()
+                val intent = Intent(this, Login::class.java)
+                startActivity(intent)
+            }.addOnFailureListener {
+                Toast.makeText(this, "Failed", Toast.LENGTH_LONG).show()
             }
         }
     }

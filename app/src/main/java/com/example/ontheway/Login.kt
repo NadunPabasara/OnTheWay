@@ -25,7 +25,7 @@ class Login : AppCompatActivity() {
             if (userName.isNotEmpty() && pass.isNotEmpty()) {
                     firebaseAuth.signInWithEmailAndPassword(userName, pass).addOnCompleteListener{
                         if (it.isSuccessful) {
-                            val intent = Intent(this, Search::class.java)
+                            val intent = Intent(this, MainPage::class.java)
                             startActivity(intent)
                         }else {
                             Toast.makeText(this, it.exception.toString(), Toast.LENGTH_SHORT).show()
