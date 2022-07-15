@@ -3,18 +3,17 @@ package com.example.ontheway
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
 import android.widget.Toast
 import com.example.ontheway.databinding.ActivityMerchantRegBinding
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 class MerchantReg : AppCompatActivity() {
 
     private lateinit var binding: ActivityMerchantRegBinding
     private lateinit var firebaseAuth: FirebaseAuth
-    private lateinit var database : DatabaseReference
+    val firestore = Firebase.firestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,6 +33,20 @@ class MerchantReg : AppCompatActivity() {
                 if (pass == confirmPass) {
                     firebaseAuth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener{
                         if (it.isSuccessful) {
+                            val customerInfo = hashMapOf(
+                                "email" to binding.etEmail.text.toString(),
+                                "phone_number" to binding.etEmail.text.toString(),
+                                "password" to binding.pWord.text.toString()
+                            )
+                            firestore.collection("merchants").document(binding.etEmail.text.toString())
+                                .set(customerInfo)
+                                .addOnSuccessListener {
+                                    Toast.makeText(this, "You added as a merchant", Toast.LENGTH_SHORT).show()
+                                }.addOnFailureListener {
+                                    Toast.makeText(this, "Failed!", Toast.LENGTH_SHORT).show()
+                                }
+                            val intent = Intent(this, Login::class.java)
+                            startActivity(intent)
                         }else {
                             Toast.makeText(this, it.exception.toString(), Toast.LENGTH_SHORT).show()
                         }
@@ -44,29 +57,6 @@ class MerchantReg : AppCompatActivity() {
             }else {
                 Toast.makeText(this, "Empty fields are not allowed", Toast.LENGTH_LONG).show()
             }
-
-            database = FirebaseDatabase.getInstance().getReference("Merchant")
-
-            val merchant = Merchant(email,pNumber,pass)
-            database.child(email).setValue(merchant).addOnSuccessListener {
-                Toast.makeText(this, "successfully Saved", Toast.LENGTH_LONG).show()
-            }.addOnFailureListener {
-                Toast.makeText(this, "Failed", Toast.LENGTH_LONG).show()
-            }
-        }
-
-        val nextBtn = findViewById<Button>(R.id.button)
-
-
-        nextBtn.setOnClickListener {
-            val intent = Intent(this, MeRegShopLocation::class.java)
-            intent.putExtra("email","email")
-            startActivity(intent)
-
-            binding.etEmail.text?.clear()
-            binding.pNumber.text?.clear()
-            binding.pWord.text?.clear()
-
         }
     }
 }

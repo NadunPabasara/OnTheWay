@@ -5,21 +5,36 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
-import com.google.android.gms.maps.model.BitmapDescriptorFactory
-import com.google.type.LatLng
+import android.widget.Toast
+import com.example.ontheway.databinding.ActivityMeRegShopLocationBinding
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 class MeRegShopLocation : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMeRegShopLocationBinding
+    val firestore = Firebase.firestore
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_me_reg_shop_location)
 
-        val shopLocation = findViewById<EditText>(R.id.etName)
-        val searchBtn = findViewById<Button>(R.id.mapSearch)
-        val saveBtn = findViewById<Button>(R.id.Save)
+        binding = ActivityMeRegShopLocationBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        searchBtn.setOnClickListener {
-            val intent = Intent(this, Map::class.java)
-            startActivity(intent)
+        binding.shopLocation.setOnClickListener {
+            val merchantInfo = hashMapOf(
+                "shop_location" to binding.mapSearchBtn.text.toString()
+            )
+            //Need to find a method to add previous screen data with this location info to the database.
+//            firestore.collection("merchant").document(binding.etEmail.text.toString())
+//                .set(merchantInfo)
+//                .addOnSuccessListener {
+//                    Toast.makeText(this, "Shop location saved successfully", Toast.LENGTH_SHORT).show()
+//                }.addOnFailureListener {
+//                    Toast.makeText(this, "Failed to add shop location", Toast.LENGTH_SHORT).show()
+//                }
         }
+        val intent = Intent(this, Map::class.java)
+        startActivity(intent)
     }
 }
